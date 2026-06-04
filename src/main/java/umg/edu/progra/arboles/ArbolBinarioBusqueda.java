@@ -195,6 +195,28 @@ public class ArbolBinarioBusqueda {
         }
         return contarHojasRecursivo(nodo.izquierdo) + contarHojasRecursivo(nodo.derecho);
     }
+    
+    // ============================================================
+    // PROBLEMAS DE LA TAREA BST
+    // ============================================================
+
+    //Problema 1 (Solución)
+    public int contarNodos() {
+        return contarNodosRecursivo(raiz);
+    }
+
+    private int contarNodosRecursivo(Nodo nodo) {
+
+        if (nodo == null) {
+            return 0;
+        }
+
+        return 1
+                + contarNodosRecursivo(nodo.izquierdo)
+                + contarNodosRecursivo(nodo.derecho);
+    }
+    
+    
 
     // ============================================================
     // RECORRIDOS DEL ARBOL
