@@ -289,7 +289,25 @@ public class ArbolBinarioBusqueda {
     }
     
     //Problema 5 (Solución)
-    
+    public void invertir() {
+        raiz = invertirRecursivo(raiz);
+    }
+
+    private Nodo invertirRecursivo(Nodo nodo) {
+
+        if (nodo == null) {
+            return null;
+        }
+
+        Nodo temporal = nodo.izquierdo;
+        nodo.izquierdo = nodo.derecho;
+        nodo.derecho = temporal;
+
+        invertirRecursivo(nodo.izquierdo);
+        invertirRecursivo(nodo.derecho);
+
+        return nodo;
+    }
 
     // ============================================================
     // RECORRIDOS DEL ARBOL
