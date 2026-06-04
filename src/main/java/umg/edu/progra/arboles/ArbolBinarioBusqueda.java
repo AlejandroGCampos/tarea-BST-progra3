@@ -262,7 +262,33 @@ public class ArbolBinarioBusqueda {
                 && esBSTValidoRecursivo(nodo.derecho, nodo.dato, maximo);
     }
     
-    //
+    //Problema 4 (Solución)
+    public int ancestroComunMasBajo(int a, int b) {
+
+        if (!contiene(a) || !contiene(b)) {
+            throw new IllegalArgumentException(
+                    "Ambos valores deben existir en el arbol");
+        }
+
+        return ancestroComunMasBajoRecursivo(raiz, a, b);
+    }
+
+    private int ancestroComunMasBajoRecursivo(Nodo nodo, int a, int b) {
+
+        if (a < nodo.dato && b < nodo.dato) {
+            return ancestroComunMasBajoRecursivo(
+                    nodo.izquierdo, a, b);
+        }
+
+        if (a > nodo.dato && b > nodo.dato) {
+            return ancestroComunMasBajoRecursivo(
+                    nodo.derecho, a, b);
+        }
+
+        return nodo.dato;
+    }
+    
+    //Problema 5 (Solución)
     
 
     // ============================================================
